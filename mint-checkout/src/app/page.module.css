@@ -1,28 +1,8 @@
 .homeContainer {
-  margin: 2rem 20rem;
+  background-color: var(--gray-a2);
+  border-radius: var(--radius-3);
 
-  .container {
-    display: grid;
-    grid-template-columns: 7fr 3fr;
-    gap: 20px;
-
-    .item {
-      border: 1px solid #ccc;
-      padding: 20px;
-    }
-  }
-}
-
-@media screen and (max-width: 768px) {
-  .homeContainer {
-    @media screen and (max-width: 768px) {
-      margin: 2rem;
-    }
-
-    .container {
-      @media screen and (max-width: 768px) {
-        grid-template-columns: 1fr;
-      }
-    }
+  .orderTitle {
+    padding-bottom: 1rem;
   }
 }

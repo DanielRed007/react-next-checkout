@@ -1,8 +1,0 @@
-.homeContainer {
-  background-color: var(--gray-a2);
-  border-radius: var(--radius-3);
-
-  .orderTitle {
-    padding-bottom: 1rem;
-  }
-}

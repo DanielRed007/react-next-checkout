@@ -39,8 +39,8 @@ bower_components
 build/Release
 
 # Dependency directories
-mint-checkout/node_modules/
-mint-checkout/.next/
+checkout/node_modules/
+checkout/.next/
 jspm_packages/
 
 # Snowpack dependency directory (https://snowpack.dev/)

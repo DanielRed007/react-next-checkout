@@ -11,13 +11,17 @@ const CheckoutMainTable: FC<Props> = ({ data }) => {
       <div className="overflow-x-auto">
         <table className="table-auto w-full">
           <thead>
-            <tr>
-              <th className="px-4 py-2">Name</th>
-              <th className="px-4 py-2">Description</th>
-              <th className="px-4 py-2">ISBN</th>
-              <th className="px-4 py-2">Price</th>
-              <th className="px-4 py-2">Producer</th>
-              <th className="px-4 py-2">Year</th>
+            <tr className="m-4">
+              <th className="px-4 bg-white border text-gray-500 py-2">Name</th>
+              <th className="px-4 bg-white border text-gray-500 py-2">
+                Description
+              </th>
+              <th className="px-4 bg-white border text-gray-500 py-2">ISBN</th>
+              <th className="px-4 bg-white border text-gray-500 py-2">Price</th>
+              <th className="px-4 bg-white border text-gray-500 py-2">
+                Producer
+              </th>
+              <th className="px-4 bg-white border text-gray-500 py-2">Year</th>
             </tr>
           </thead>
           <tbody>

@@ -1,11 +1,6 @@
 import { VideoGame } from "./model/Videogame";
 import CheckoutMainTable from "./shared/CheckoutMainTable";
 
-const tableData = [
-  { field1: "data 1", field2: "data 2" },
-  { field1: "data 1", field2: "data 2" },
-];
-
 const videoGames: VideoGame[] = [
   {
     id: 1,

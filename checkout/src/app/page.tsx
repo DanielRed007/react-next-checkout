@@ -1,9 +1,9 @@
 "use client";
 
 import { useHomeContext } from "./context/HomeContext";
-import CheckoutMainTable from "./shared/CheckoutMainTable";
-import { Footer } from "./shared/Footer";
-import Header from "./shared/Header";
+import CheckoutMainTable from "./shared/components/CheckoutMainTable";
+import { Footer } from "./shared/components/Footer";
+import Header from "./shared/components/Header";
 
 export default function Home() {
   const { dataTable } = useHomeContext();

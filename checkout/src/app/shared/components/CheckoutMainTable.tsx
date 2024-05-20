@@ -1,5 +1,5 @@
 import React, { FC } from "react";
-import { VideoGame } from "../model/Videogame";
+import { VideoGame } from "../../model/Videogame";
 
 interface Props {
   data: VideoGame[];

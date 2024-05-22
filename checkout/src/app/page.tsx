@@ -1,6 +1,7 @@
 "use client";
 
 import { useHomeContext } from "./context/HomeContext";
+import { CartModal } from "./shared/components/CartModal";
 import CheckoutMainTable from "./shared/components/CheckoutMainTable";
 import { Footer } from "./shared/components/Footer";
 import Header from "./shared/components/Header";
@@ -26,6 +27,7 @@ export default function Home() {
         </div>
         <Footer content="2024 Thelema Store. All rights reserved." />
       </div>
+      <CartModal />
     </div>
   );
 }

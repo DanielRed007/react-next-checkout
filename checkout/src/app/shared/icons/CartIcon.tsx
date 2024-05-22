@@ -1,7 +1,7 @@
 import React, { FC } from "react";
 
 interface Props {
-  onClick(): void;
+  onClick?(): void;
 }
 
 export const CartIcon: FC<Props> = ({ onClick }) => {

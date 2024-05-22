@@ -9,7 +9,8 @@ const HomeContext = createContext<HomeContextData | undefined>(undefined);
 interface HomeContextData {
   dataTable: VideoGame[];
   isCartOpen: boolean;
-  toggleCart(open: boolean): void;
+  toggleCart(): void;
+  closeCart(): void;
 }
 
 export const useHomeContext = () => {
@@ -30,15 +31,19 @@ export const HomeContextProvider: FC<HomeContextProviderProps> = ({
   const homeDataTable = useMemo(() => videoGames, [videoGames]);
   const [isOpen, setIsOpen] = useState(false);
 
-  function toggleCart(open: boolean) {
-    console.log(!open);
-    setIsOpen(!open);
-  }
+  const toggleCart = () => {
+    setIsOpen(!isOpen);
+  };
+
+  const closeCart = () => {
+    setIsOpen(false);
+  };
 
   const value = {
     dataTable: homeDataTable,
     isCartOpen: isOpen,
     toggleCart: toggleCart,
+    closeCart: closeCart,
   };
 
   return <HomeContext.Provider value={value}>{children}</HomeContext.Provider>;

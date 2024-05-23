@@ -14,13 +14,13 @@ export default function Home() {
       <Header />
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <header className="pt-6 pb-2">
-          <h1 className="text-3xl font-bold text-center text-white">
+          <h1 className="text-3xl font-quicksand font-bold text-center text-white">
             Retro Store
           </h1>
         </header>
         <div className="py-1">
           <CheckoutMainTable data={dataTable} />
-          <p className="text-md text-center text-gray-700">
+          <p className="text-md font-quicksand text-center text-white">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec
             odio. Praesent libero. Sed cursus ante dapibus diam.
           </p>

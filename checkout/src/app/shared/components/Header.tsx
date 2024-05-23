@@ -29,7 +29,7 @@ const Header = () => {
         <CustomLink routes={routes} />
 
         <div className="flex">
-          <h1 className="text-md font-semibold mr-2">Cart</h1>
+          <h1 className="text-md font-quicksand font-semibold mr-2">Cart</h1>
           <CartIcon onClick={toggleRetroCart} />
         </div>
       </div>

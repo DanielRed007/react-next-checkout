@@ -10,7 +10,10 @@ export const CustomLink: FC<Props> = ({ routes }) => {
   return (
     <ul className="flex items-center">
       {routes.map((route, index) => (
-        <li key={index} className="px-2">
+        <li
+          className="text-md font-quicksand font-semibold mr-2 px-2"
+          key={index}
+        >
           <Link key={index} href={route.link}>
             {route.title}
           </Link>

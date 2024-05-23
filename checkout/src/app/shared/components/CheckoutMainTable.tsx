@@ -12,27 +12,41 @@ const CheckoutMainTable: FC<Props> = ({ data }) => {
         <table className="table-auto w-full">
           <thead>
             <tr className="m-4">
-              <th className="px-4 bg-white border text-gray-500 py-2">Name</th>
-              <th className="px-4 bg-white border text-gray-500 py-2">
+              <th className="px-4 font-quicksand bg-white border text-gray-500 py-2">
+                Name
+              </th>
+              <th className="px-4 font-quicksand bg-white border text-gray-500 py-2">
                 Description
               </th>
-              <th className="px-4 bg-white border text-gray-500 py-2">ISBN</th>
-              <th className="px-4 bg-white border text-gray-500 py-2">Price</th>
-              <th className="px-4 bg-white border text-gray-500 py-2">
+              <th className="px-4 font-quicksand bg-white border text-gray-500 py-2">
+                ISBN
+              </th>
+              <th className="px-4 font-quicksand bg-white border text-gray-500 py-2">
+                Price
+              </th>
+              <th className="px-4 font-quicksand bg-white border text-gray-500 py-2">
                 Producer
               </th>
-              <th className="px-4 bg-white border text-gray-500 py-2">Year</th>
+              <th className="px-4 font-quicksand bg-white border text-gray-500 py-2">
+                Year
+              </th>
             </tr>
           </thead>
           <tbody>
             {data.map((item, index) => (
               <tr key={index} className={index % 2 === 0 ? "bg-gray-500" : ""}>
-                <td className="border px-4 py-2">{item.name}</td>
-                <td className="border px-4 py-2">{item.description}</td>
-                <td className="border px-4 py-2">{item.isbn}</td>
-                <td className="border px-4 py-2">{item.price}</td>
-                <td className="border px-4 py-2">{item.producer}</td>
-                <td className="border px-4 py-2">{item.year}</td>
+                <td className="border font-quicksand px-4 py-2">{item.name}</td>
+                <td className="border font-quicksand px-4 py-2">
+                  {item.description}
+                </td>
+                <td className="border font-quicksand px-4 py-2">{item.isbn}</td>
+                <td className="border font-quicksand px-4 py-2">
+                  {item.price}
+                </td>
+                <td className="border font-quicksand px-4 py-2">
+                  {item.producer}
+                </td>
+                <td className="border font-quicksand px-4 py-2">{item.year}</td>
               </tr>
             ))}
           </tbody>

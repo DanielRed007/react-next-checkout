@@ -3,6 +3,7 @@
 import { useHomeContext } from "./context/HomeContext";
 import { CartModal } from "./shared/components/CartModal";
 import CheckoutMainTable from "./shared/components/CheckoutMainTable";
+import CheckoutProductContainer from "./shared/components/CheckoutProductContainer";
 import { Footer } from "./shared/components/Footer";
 import Header from "./shared/components/Header";
 
@@ -19,7 +20,7 @@ export default function Home() {
           </h1>
         </header>
         <div className="py-1">
-          <CheckoutMainTable data={dataTable} />
+          <CheckoutProductContainer data={dataTable} />
           <p className="text-md font-quicksand text-center text-white">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec
             odio. Praesent libero. Sed cursus ante dapibus diam.

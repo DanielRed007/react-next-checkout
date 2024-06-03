@@ -3,7 +3,7 @@ import { render, screen } from "@testing-library/react";
 import { CardItem } from "../../app/shared/components/CardItem";
 import { videoGames } from "@/app/mock/data";
 
-describe("Page", () => {
+describe("Card Item", () => {
   it("should render a card item", () => {
     render(<CardItem card={videoGames[0]} />);
 

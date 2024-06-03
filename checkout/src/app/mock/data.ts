@@ -44,9 +44,9 @@ export const videoGames: VideoGame[] = [
   },
   {
     id: 1,
-    name: "The Legend of Zelda: Breath of the Wild",
+    name: "The Legend of Zelda: Breath of the Wild 2",
     description: "A critically acclaimed action-adventure game.",
-    isbn: "978-0-87424-858-2",
+    isbn: "978-0-87424-858-7",
     price: 59.99,
     producer: "Nintendo",
     year: 2017,
@@ -95,9 +95,9 @@ export const videoGames: VideoGame[] = [
   },
   {
     id: 4,
-    name: "Halo Infinite",
+    name: "Halo Infinite 2",
     description: "The next chapter of the legendary franchise.",
-    isbn: "978-0-7415-3157-7",
+    isbn: "978-0-7415-3157-9",
     price: 59.99,
     producer: "343 Industries",
     year: 2021,

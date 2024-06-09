@@ -43,7 +43,7 @@ export const videoGames: VideoGame[] = [
     status: "pre-order",
   },
   {
-    id: 1,
+    id: 5,
     name: "The Legend of Zelda: Breath of the Wild 2",
     description: "A critically acclaimed action-adventure game.",
     isbn: "978-0-87424-858-7",
@@ -53,7 +53,7 @@ export const videoGames: VideoGame[] = [
     status: "available",
   },
   {
-    id: 2,
+    id: 6,
     name: "Red Dead Redemption 2",
     description:
       "An epic tale of life in America at the dawn of the modern age.",
@@ -64,7 +64,7 @@ export const videoGames: VideoGame[] = [
     status: "available",
   },
   {
-    id: 3,
+    id: 7,
     name: "Cyberpunk 2077",
     description: "An open-world, action-adventure story set in Night City.",
     isbn: "978-0-7409-6100-7",
@@ -74,7 +74,7 @@ export const videoGames: VideoGame[] = [
     status: "out of stock",
   },
   {
-    id: 4,
+    id: 8,
     name: "Halo Infinite",
     description: "The next chapter of the legendary franchise.",
     isbn: "978-0-7415-3157-7",
@@ -84,7 +84,7 @@ export const videoGames: VideoGame[] = [
     status: "pre-order",
   },
   {
-    id: 3,
+    id: 9,
     name: "Cyberpunk 2077",
     description: "An open-world, action-adventure story set in Night City.",
     isbn: "978-0-7409-6100-7",
@@ -94,7 +94,7 @@ export const videoGames: VideoGame[] = [
     status: "out of stock",
   },
   {
-    id: 4,
+    id: 10,
     name: "Halo Infinite 2",
     description: "The next chapter of the legendary franchise.",
     isbn: "978-0-7415-3157-9",

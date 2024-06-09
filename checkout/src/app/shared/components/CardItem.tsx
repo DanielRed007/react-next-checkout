@@ -1,3 +1,4 @@
+import { useHomeContext } from "@/app/context/HomeContext";
 import { VideoGame } from "@/app/model/Videogame";
 import React, { FC } from "react";
 
@@ -6,6 +7,8 @@ interface Props {
 }
 
 export const CardItem: FC<Props> = ({ card }) => {
+  const { addItem } = useHomeContext();
+
   return (
     <>
       <div className="border-2 border-blue-400 p-4 m-2 rounded-lg w-80 h-96 flex-col justify-between bg-white">
@@ -41,7 +44,10 @@ export const CardItem: FC<Props> = ({ card }) => {
             </p>
           </div>
         </div>
-        <button className="mt-5 bg-blue-500 text-white py-2 px-4 mt-4 rounded">
+        <button
+          onClick={() => addItem(card)}
+          className="mt-5 bg-blue-500 text-white py-2 px-4 mt-4 rounded"
+        >
           Buy Now
         </button>
       </div>

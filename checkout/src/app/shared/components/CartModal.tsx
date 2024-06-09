@@ -27,7 +27,9 @@ const plans = [
 
 export const CartModal = () => {
   const [selected, setSelected] = useState(plans[0]);
-  const { isCartOpen, closeCart } = useHomeContext();
+  const { isCartOpen, closeCart, gamesCart } = useHomeContext();
+
+  console.log(gamesCart);
 
   return (
     <Transition appear show={isCartOpen} as={Fragment}>
@@ -72,63 +74,65 @@ export const CartModal = () => {
                           Server size
                         </RadioGroup.Label>
                         <div className="space-y-2">
-                          {plans.map((plan) => (
-                            <RadioGroup.Option
-                              key={plan.name}
-                              value={plan}
-                              className={({ active, checked }) =>
-                                `${
-                                  active
-                                    ? "ring-2 ring-white/60 ring-offset-2 ring-offset-sky-300"
-                                    : ""
-                                }
+                          {gamesCart.length > 0
+                            ? gamesCart.map((game) => (
+                                <RadioGroup.Option
+                                  key={game.name}
+                                  value={game}
+                                  className={({ active, checked }) =>
+                                    `${
+                                      active
+                                        ? "ring-2 ring-white/60 ring-offset-2 ring-offset-sky-300"
+                                        : ""
+                                    }
                   ${checked ? "bg-sky-900/75 text-white" : "bg-white"}
                     relative flex cursor-pointer rounded-lg px-5 py-4 shadow-md focus:outline-none`
-                              }
-                            >
-                              {({ active, checked }) => (
-                                <>
-                                  <div className="flex w-full items-center justify-between">
-                                    <div className="flex items-center">
-                                      <div className="text-sm">
-                                        <RadioGroup.Label
-                                          as="p"
-                                          className={`font-medium  ${
-                                            checked
-                                              ? "text-white"
-                                              : "text-gray-900"
-                                          }`}
-                                        >
-                                          {plan.name}
-                                        </RadioGroup.Label>
-                                        <RadioGroup.Description
-                                          as="span"
-                                          className={`inline ${
-                                            checked
-                                              ? "text-sky-100"
-                                              : "text-gray-500"
-                                          }`}
-                                        >
-                                          <span>
-                                            {plan.ram}/{plan.cpus}
-                                          </span>{" "}
-                                          <span aria-hidden="true">
-                                            &middot;
-                                          </span>{" "}
-                                          <span>{plan.disk}</span>
-                                        </RadioGroup.Description>
+                                  }
+                                >
+                                  {({ active, checked }) => (
+                                    <>
+                                      <div className="flex w-full items-center justify-between">
+                                        <div className="flex items-center">
+                                          <div className="text-sm">
+                                            <RadioGroup.Label
+                                              as="p"
+                                              className={`font-medium  ${
+                                                checked
+                                                  ? "text-white"
+                                                  : "text-gray-900"
+                                              }`}
+                                            >
+                                              {game.name}
+                                            </RadioGroup.Label>
+                                            <RadioGroup.Description
+                                              as="span"
+                                              className={`inline ${
+                                                checked
+                                                  ? "text-sky-100"
+                                                  : "text-gray-500"
+                                              }`}
+                                            >
+                                              <span>
+                                                {game.price}/{game.year}
+                                              </span>{" "}
+                                              <span aria-hidden="true">
+                                                &middot;
+                                              </span>{" "}
+                                              <span>{game.producer}</span>
+                                            </RadioGroup.Description>
+                                          </div>
+                                        </div>
+                                        {checked && (
+                                          <div className="shrink-0 text-white">
+                                            <CheckIcon />
+                                          </div>
+                                        )}
                                       </div>
-                                    </div>
-                                    {checked && (
-                                      <div className="shrink-0 text-white">
-                                        <CheckIcon />
-                                      </div>
-                                    )}
-                                  </div>
-                                </>
-                              )}
-                            </RadioGroup.Option>
-                          ))}
+                                    </>
+                                  )}
+                                </RadioGroup.Option>
+                              ))
+                            : "Cart Empty, Add some items to purchase"}
                         </div>
                       </RadioGroup>
                     </div>

@@ -6,5 +6,6 @@ export interface VideoGame {
   price: number;
   producer: string;
   year: number;
+  quantity: number;
   status: "available" | "out of stock" | "pre-order";
 }

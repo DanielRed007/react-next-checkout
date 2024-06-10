@@ -10,6 +10,7 @@ interface HomeContextData {
   dataTable: VideoGame[];
   isCartOpen: boolean;
   isOpenedCartDialog: boolean;
+  hideCartDialog(): void;
   toggleCart(): void;
   closeCart(): void;
   addItem(game: VideoGame): void;
@@ -55,6 +56,10 @@ export const HomeContextProvider: FC<HomeContextProviderProps> = ({
     }
   };
 
+  const hideCartModal = () => {
+    setIsOpenCartDialog(false);
+  };
+
   const value = {
     dataTable: homeDataTable,
     isCartOpen: isOpen,
@@ -63,6 +68,7 @@ export const HomeContextProvider: FC<HomeContextProviderProps> = ({
     closeCart: closeCart,
     addItem: addItemToCart,
     gamesCart: cart,
+    hideCartDialog: hideCartModal,
   };
 
   return <HomeContext.Provider value={value}>{children}</HomeContext.Provider>;

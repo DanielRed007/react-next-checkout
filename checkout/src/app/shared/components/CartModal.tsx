@@ -4,32 +4,9 @@ import { Dialog, Transition } from "@headlessui/react";
 import { RadioGroup } from "@headlessui/react";
 import { CheckIcon } from "../icons/CheckIcon";
 
-const plans = [
-  {
-    name: "Startup",
-    ram: "12GB",
-    cpus: "6 CPUs",
-    disk: "160 GB SSD disk",
-  },
-  {
-    name: "Business",
-    ram: "16GB",
-    cpus: "8 CPUs",
-    disk: "512 GB SSD disk",
-  },
-  {
-    name: "Enterprise",
-    ram: "32GB",
-    cpus: "12 CPUs",
-    disk: "1024 GB SSD disk",
-  },
-];
-
 export const CartModal = () => {
-  const [selected, setSelected] = useState(plans[0]);
   const { isCartOpen, closeCart, gamesCart } = useHomeContext();
-
-  console.log(gamesCart);
+  const [selected, setSelected] = useState(gamesCart[0]);
 
   return (
     <Transition appear show={isCartOpen} as={Fragment}>
@@ -71,7 +48,7 @@ export const CartModal = () => {
                     <div className="mx-auto w-full max-w-md">
                       <RadioGroup value={selected} onChange={setSelected}>
                         <RadioGroup.Label className="sr-only">
-                          Server size
+                          Your Cart Items
                         </RadioGroup.Label>
                         <div className="space-y-2">
                           {gamesCart.length > 0

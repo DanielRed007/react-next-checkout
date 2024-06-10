@@ -54,7 +54,7 @@ export const videoGames: VideoGame[] = [
   },
   {
     id: 6,
-    name: "Red Dead Redemption 2",
+    name: "Red Dead Redemption 3",
     description:
       "An epic tale of life in America at the dawn of the modern age.",
     isbn: "978-1-07476-422-1",

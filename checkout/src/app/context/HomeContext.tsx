@@ -9,6 +9,7 @@ const HomeContext = createContext<HomeContextData | undefined>(undefined);
 interface HomeContextData {
   dataTable: VideoGame[];
   isCartOpen: boolean;
+  isOpenedCartDialog: boolean;
   toggleCart(): void;
   closeCart(): void;
   addItem(game: VideoGame): void;
@@ -30,8 +31,9 @@ interface HomeContextProviderProps {
 export const HomeContextProvider: FC<HomeContextProviderProps> = ({
   children,
 }) => {
-  const homeDataTable = useMemo(() => videoGames, [videoGames]);
-  const [isOpen, setIsOpen] = useState(false);
+  const homeDataTable: VideoGame[] = useMemo(() => videoGames, [videoGames]);
+  const [isOpen, setIsOpen] = useState<boolean>(false);
+  const [isOpenCartDialog, setIsOpenCartDialog] = useState<boolean>(false);
   const [cart, setCartItem] = useState<VideoGame[]>([]);
 
   const toggleCart = () => {
@@ -48,13 +50,15 @@ export const HomeContextProvider: FC<HomeContextProviderProps> = ({
     if (!isGameAdded) {
       setCartItem((prevCart: any) => [...prevCart, currentGame]);
     } else {
-      console.log("Game is already in the cart");
+      console.log("This item is already in the cart");
+      setIsOpenCartDialog(true);
     }
   };
 
   const value = {
     dataTable: homeDataTable,
     isCartOpen: isOpen,
+    isOpenedCartDialog: isOpenCartDialog,
     toggleCart: toggleCart,
     closeCart: closeCart,
     addItem: addItemToCart,

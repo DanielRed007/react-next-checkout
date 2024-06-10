@@ -1,6 +1,8 @@
 import { useHomeContext } from "@/app/context/HomeContext";
 import { VideoGame } from "@/app/model/Videogame";
 import React, { FC } from "react";
+import { AddCartIcon } from "../icons/AddCartIcon";
+import { MinusIcon } from "../icons/MinusIcon";
 
 interface Props {
   card: VideoGame;
@@ -8,6 +10,19 @@ interface Props {
 
 export const CardItem: FC<Props> = ({ card }) => {
   const { addItem } = useHomeContext();
+
+  const isItemAvailable = (status: string): boolean =>
+    status === "out of stock";
+
+  const getIconColor = (status: string): string | undefined => {
+    return status === "available"
+      ? "text-green-700"
+      : status === "out of stock"
+      ? "text-red-700"
+      : status === "pre-order"
+      ? "text-blue-700"
+      : undefined;
+  };
 
   return (
     <>
@@ -38,17 +53,19 @@ export const CardItem: FC<Props> = ({ card }) => {
               {card.price}
             </p>
           </div>
-          <div>
-            <p className="text-sm font-bold mt-2 text-gray-400">
+          <div className="flex items-center">
+            <p className="text-sm font-bold mt-2 text-gray-400 mr-1 mb-2">
               {card.status}
             </p>
+            <MinusIcon colorClass={getIconColor(card.status)} />
           </div>
         </div>
         <button
           onClick={() => addItem(card)}
-          className="mt-5 bg-blue-500 text-white py-2 px-4 mt-4 rounded"
+          className="mt-5 bg-blue-500 text-white py-2 px-4 mt-4 rounded flex items-left disabled:opacity-75"
+          disabled={isItemAvailable(card.status)}
         >
-          Buy Now
+          <h1 className="mr-3">Add to Cart</h1> <AddCartIcon />
         </button>
       </div>
     </>

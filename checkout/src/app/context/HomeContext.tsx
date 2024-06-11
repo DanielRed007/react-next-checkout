@@ -4,7 +4,9 @@ import React, { FC, createContext, useContext, useMemo, useState } from "react";
 import { videoGames } from "../mock/data";
 import { VideoGame } from "../model/Videogame";
 
-const HomeContext = createContext<HomeContextData | undefined>(undefined);
+export const HomeContext = createContext<HomeContextData | undefined>(
+  undefined
+);
 
 interface HomeContextData {
   dataTable: VideoGame[];

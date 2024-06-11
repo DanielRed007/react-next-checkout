@@ -1,5 +1,5 @@
 import "@testing-library/jest-dom";
-import { render, screen } from "@testing-library/react";
+import { fireEvent, render, screen } from "@testing-library/react";
 import Page from "../../../app/page";
 import { HomeContextProvider } from "../../../app/context/HomeContext";
 
@@ -12,9 +12,24 @@ describe("Page", () => {
     );
 
     const homeTitle = screen.getByText("Retro Store");
-
     screen.debug(undefined, 20000);
-
     expect(homeTitle).toBeInTheDocument();
+  });
+
+  it("should render Cart modal on click", async () => {
+    render(
+      <HomeContextProvider>
+        <Page />
+      </HomeContextProvider>
+    );
+
+    // Get icon button
+    const cartIcon = await screen.getByTestId("cart-icon");
+    // Fire odal display
+    fireEvent.click(cartIcon);
+
+    // Cart modal must be in the document
+    const cartModal = await screen.getByText("Shopping Cart");
+    expect(cartModal).toBeInTheDocument();
   });
 });

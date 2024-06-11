@@ -2,9 +2,10 @@ import React, { FC } from "react";
 
 interface Props {
   onClick?(): void;
+  dataTestId?: string;
 }
 
-export const CartIcon: FC<Props> = ({ onClick }) => {
+export const CartIcon: FC<Props> = ({ onClick, dataTestId }) => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -14,6 +15,7 @@ export const CartIcon: FC<Props> = ({ onClick }) => {
       stroke="currentColor"
       className="w-6 h-6"
       onClick={onClick}
+      data-testid={dataTestId}
     >
       <path
         strokeLinecap="round"

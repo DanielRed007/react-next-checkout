@@ -7,5 +7,6 @@ export interface VideoGame {
   producer: string;
   year: number;
   quantity: number;
+  isInCart: boolean;
   status: "available" | "out of stock" | "pre-order";
 }

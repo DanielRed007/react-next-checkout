@@ -45,17 +45,23 @@ export const HomeContextProvider: FC<HomeContextProviderProps> = ({
 
   const closeCart = () => {
     setIsOpen(false);
+    // continue the cart addition and removal
+    console.log(cart);
   };
 
   const addItemToCart = (currentGame: VideoGame) => {
     const isGameAdded = cart.find((game) => game.id === currentGame.id);
 
     if (!isGameAdded) {
+      currentGame.isInCart = true;
+
       setCartItem((prevCart: any) => [...prevCart, currentGame]);
     } else {
       console.log("This item is already in the cart");
       setIsOpenCartDialog(true);
     }
+
+    console.log(cart);
   };
 
   const hideCartModal = () => {

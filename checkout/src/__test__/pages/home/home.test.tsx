@@ -1,5 +1,5 @@
 import "@testing-library/jest-dom";
-import { fireEvent, render, screen } from "@testing-library/react";
+import { fireEvent, render, screen, waitFor } from "@testing-library/react";
 import Page from "../../../app/page";
 import { HomeContextProvider } from "../../../app/context/HomeContext";
 
@@ -31,5 +31,16 @@ describe("Page", () => {
     // Cart modal must be in the document
     const cartModal = await screen.getByText("Shopping Cart");
     expect(cartModal).toBeInTheDocument();
+
+    const cartModalCloseBtn = screen.getByTestId("cart-close-btn");
+
+    await waitFor(() => {
+      expect(cartModalCloseBtn).toBeInTheDocument();
+
+      fireEvent.click(cartModalCloseBtn);
+      expect(cartModal).not.toBeInTheDocument();
+    });
+
+    screen.debug(undefined, 20000);
   });
 });

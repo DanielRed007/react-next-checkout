@@ -11,6 +11,7 @@ export const videoGames: VideoGame[] = [
     year: 2017,
     status: "available",
     quantity: 5,
+    isInCart: false,
   },
   {
     id: 2,
@@ -23,6 +24,7 @@ export const videoGames: VideoGame[] = [
     year: 2018,
     status: "available",
     quantity: 5,
+    isInCart: false,
   },
   {
     id: 3,
@@ -34,6 +36,7 @@ export const videoGames: VideoGame[] = [
     year: 2020,
     status: "out of stock",
     quantity: 5,
+    isInCart: false,
   },
   {
     id: 4,
@@ -45,6 +48,7 @@ export const videoGames: VideoGame[] = [
     year: 2021,
     status: "pre-order",
     quantity: 5,
+    isInCart: false,
   },
   {
     id: 5,
@@ -56,6 +60,7 @@ export const videoGames: VideoGame[] = [
     year: 2017,
     status: "available",
     quantity: 5,
+    isInCart: false,
   },
   {
     id: 6,
@@ -68,6 +73,7 @@ export const videoGames: VideoGame[] = [
     year: 2018,
     status: "available",
     quantity: 5,
+    isInCart: false,
   },
   {
     id: 7,
@@ -79,6 +85,7 @@ export const videoGames: VideoGame[] = [
     year: 2020,
     status: "out of stock",
     quantity: 5,
+    isInCart: false,
   },
   {
     id: 8,
@@ -90,6 +97,7 @@ export const videoGames: VideoGame[] = [
     year: 2021,
     status: "pre-order",
     quantity: 5,
+    isInCart: false,
   },
   {
     id: 9,
@@ -101,6 +109,7 @@ export const videoGames: VideoGame[] = [
     year: 2020,
     status: "out of stock",
     quantity: 5,
+    isInCart: false,
   },
   {
     id: 10,
@@ -112,5 +121,6 @@ export const videoGames: VideoGame[] = [
     year: 2021,
     status: "pre-order",
     quantity: 5,
+    isInCart: false,
   },
 ];
